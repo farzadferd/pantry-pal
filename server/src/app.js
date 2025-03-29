@@ -5,7 +5,7 @@ import morgan from 'morgan';
 const app = express();
 const port = 3000;
 
-const API_KEY = 'ef89b943fcaf406699b9da851b0c2d0c';
+const API_KEY = 'key in gc, replace this with actual key';
 
 app.use(cors());
 app.use(morgan('dev'));
