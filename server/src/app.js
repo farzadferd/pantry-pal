@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import PantryItem from './models/PantryItem.js';
 
 dotenv.config();
 const API_KEY = process.env.API_KEY
@@ -23,8 +24,20 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.post('/pantry', async (req, res) => {
+  const { item, quantity, type, expiration } = req.body;
+  const pantryItem = new PantryItem({ item, quantity, type, expiration });
+  try {
+    await pantryItem.save();
+    res.status(201).json(pantryItem);
+  } catch (error) {
+    console.error('Error saving pantry item:', error);
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
+
 app.get('/recipes', async (req, res) => {
-    const ingredients = ['chicken', 'rice', 'onion']; // harddoded for now
+    const ingredients = ['chicken', 'rice', 'onion']; // hardcoded for now
     let ingredientStr = ingredients.join(','); //format to put in the URL
     try {
       const response = await fetch(
