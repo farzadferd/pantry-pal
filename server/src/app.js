@@ -24,6 +24,16 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.get('/pantry', async (req, res) => {
+  try {
+    const pantryItems = await PantryItem.find();
+    res.json(pantryItems);
+  } catch (error) {
+    console.error('Error fetching pantry items:', error);
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
+
 app.post('/pantry', async (req, res) => {
   const { item, quantity, type, expiration } = req.body;
   const pantryItem = new PantryItem({ item, quantity, type, expiration });
@@ -35,6 +45,35 @@ app.post('/pantry', async (req, res) => {
     res.status(500).json({ error: 'Something went wrong' });
   }
 }); 
+
+app.put('/pantry/:id', async (req, res) => {
+  const { id } = req.params;
+  const { item, quantity, type, expiration } = req.body;
+  try {
+    const pantryItem = await PantryItem.findByIdAndUpdate(id, { item, quantity, type, expiration }, { new: true });
+    if (!pantryItem) {
+      return res.status(404).json({ error: 'Pantry item not found' });
+    }
+    res.json(pantryItem);
+  } catch (error) {
+    console.error('Error updating pantry item:', error);
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
+
+app.delete('/pantry/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const pantryItem = await PantryItem.findByIdAndDelete(id);
+    if (!pantryItem) {
+      return res.status(404).json({ error: 'Pantry item not found' });
+    }
+    res.json({ message: 'Pantry item deleted' });
+  } catch (error) {
+    console.error('Error deleting pantry item:', error);
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
 
 app.get('/recipes', async (req, res) => {
     const ingredients = ['chicken', 'rice', 'onion']; // hardcoded for now
