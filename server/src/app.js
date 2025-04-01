@@ -14,7 +14,7 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.error('MongoDB connection error:', err));
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -34,11 +34,12 @@ app.post('/pantry', async (req, res) => {
     console.error('Error saving pantry item:', error);
     res.status(500).json({ error: 'Something went wrong' });
   }
-});
+}); 
 
 app.get('/recipes', async (req, res) => {
     const ingredients = ['chicken', 'rice', 'onion']; // hardcoded for now
     let ingredientStr = ingredients.join(','); //format to put in the URL
+    // const ingredientStr = req.query.ingredients; // get ingredients from query params (`http://localhost:3000/recipes?ingredients=${ingredients}`)
     try {
       const response = await fetch(
         `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientStr}&number=2`, 
