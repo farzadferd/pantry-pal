@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import AddPantryItem from './components/AddPantryItem';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>🔍 PantryPal</h1>
+        <nav>
+          <a href="#pantry">My Pantry</a>
+          <a href="#recipes">Recipes</a>
+          <a href="#shopping">Shopping Lists</a>
+          <a href="#account">Account</a>
+        </nav>
       </header>
+      <main>
+        <AddPantryItem />
+      </main>
     </div>
   );
 }

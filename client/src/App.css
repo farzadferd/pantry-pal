@@ -14,14 +14,34 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: white;
+  padding: 1rem 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.App-header nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.App-header nav a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+}
+
+.App-header nav a:hover {
+  color: rgb(219, 112, 112);
 }
 
 .App-link {
@@ -35,4 +55,112 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.pantry-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.add-button {
+  background-color: rgb(219, 112, 112);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 300px;
+}
+
+.add-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.form-buttons button {
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: rgb(219, 112, 112);
+  color: white;
+  border: none;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #ddd;
+  border: none;
+}
+
+.items-list {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.list-header, .list-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+  padding: 15px;
+  align-items: center;
+}
+
+.list-header {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.list-item {
+  border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
