@@ -1,11 +1,19 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const API_KEY = process.env.API_KEY
+const MONGO_URI = process.env.MONGO_URI
+
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 const app = express();
 const port = 3000;
-
-const API_KEY = 'key in gc, replace this with actual key';
 
 app.use(cors());
 app.use(morgan('dev'));
