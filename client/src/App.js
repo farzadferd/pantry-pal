@@ -1,18 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
 import AddPantryItem from './components/AddPantryItem';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Recipes from './pages/Recipes';
 import List from './pages/List';
-import Landing from './pages/Landing';
 import Account from './pages/Account';
-import ShoppingList from './components/AddShoppingListItem';
-import RecipesPage from './components/RecipesPage';
+import HomePage from './pages/HomePage';
+import ShoppingList from './pages/AddShoppingListItem';
+import Recipes from './pages/RecipesPage';
 
 function App() {
   return (
@@ -24,7 +22,7 @@ function App() {
           <nav>
             <Link to="/pantry">My Pantry</Link>
             <Link to="/recipes">Recipes</Link>
-            <Link to="/shopping">Shopping Lists</Link>
+            <Link to="/list">Shopping Lists</Link>
             <Link to="/account">Account</Link>
             <Link to="/login">Login</Link>
           </nav>
@@ -37,10 +35,10 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/pantry" element={<AddPantryItem />} />
             <Route path="/recipes" element={<Recipes />} />
-            <Route path="/list" element={<List />} />
+            <Route path="/list" element={<ShoppingList />} />
             <Route path="/account" element={<Account />} />
-            {/* <Route path="/" element={<Landing />} /> */}
-            <Route path="/" element={<div>Welcome to PantryPal!</div>} />
+            <Route path="/" element={<HomePage />} />
+            {/* <Route path="/" element={<div>Welcome to PantryPal!</div>} /> */}
           </Routes>
         </main>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomePage.css";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 
 const HomePage = () => {
   return (
@@ -14,7 +14,7 @@ const HomePage = () => {
           <a href="#">My Pantry</a>
           <a href="#">Recipes</a>
           <a href="#">Shopping Lists</a>
-          <a href="#"><FaUserCircle className="user-icon" /> Account</a>
+          {/* <a href="#"><FaUserCircle className="user-icon" /> Account</a> */}
         </div>
       </nav>
 
