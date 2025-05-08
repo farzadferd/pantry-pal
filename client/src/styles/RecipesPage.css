@@ -1,0 +1,110 @@
+.recipes-page {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input-section input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .input-section input:focus {
+    border-color: #ff4d4d;
+  }
+  
+  .ingredient-bubbles {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .ingredient-bubble {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center; 
+    font-size: 14px;
+    height: 30px; 
+    line-height: 30px; 
+  }
+  
+  .remove-bubble {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-bottom:10px;
+    margin-top:12px;
+    cursor: pointer;
+    vertical-align: middle; 
+  }
+  
+  .remove-bubble:hover {
+    color: #f1c40f;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .recipes-list {
+    margin-top: 20px;
+  }
+  
+  .recipes-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recipe-item {
+    padding: 10px;
+    border-bottom: 1px dashed #ccc;
+  }
+  
+  .recipe-item p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+  }
+  
