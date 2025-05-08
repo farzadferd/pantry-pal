@@ -14,7 +14,7 @@ mongoose.connect(MONGO_URI)
   .catch(err => console.error('MongoDB connection error:', err));
 
 const app = express();
-const port = 5000;
+const port = 3001;
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -35,8 +35,8 @@ app.get('/pantry', async (req, res) => {
 });
 
 app.post('/pantry', async (req, res) => {
-  const { item, quantity, type, expiration } = req.body;
-  const pantryItem = new PantryItem({ item, quantity, type, expiration });
+  const { item, quantity, category, expiration } = req.body;
+  const pantryItem = new PantryItem({ item, quantity, category, expiration });
   try {
     await pantryItem.save();
     res.status(201).json(pantryItem);
@@ -48,9 +48,9 @@ app.post('/pantry', async (req, res) => {
 
 app.put('/pantry/:id', async (req, res) => {
   const { id } = req.params;
-  const { item, quantity, type, expiration } = req.body;
+  const { item, quantity, Category, expiration } = req.body;
   try {
-    const pantryItem = await PantryItem.findByIdAndUpdate(id, { item, quantity, type, expiration }, { new: true });
+    const pantryItem = await PantryItem.findByIdAndUpdate(id, { item, quantity, Category, expiration }, { new: true });
     if (!pantryItem) {
       return res.status(404).json({ error: 'Pantry item not found' });
     }

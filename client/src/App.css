@@ -6,14 +6,26 @@
   }
 }
 
-.App-header {
-  background-color: white;
+.App{
+  background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Customize the colors */
+  min-height: 100vh;
+  
+}
+/* .App-header {
+  background-color: white; 
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 2rem;
+} */
+
+.App-header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .App-header h1 {
@@ -51,17 +63,25 @@
 }
 
 .pantry-container {
+  
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
 .header {
+  background-color: rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  padding: 0rem 2rem; /* Optional: spacing inside */
+  border-radius: 16px; /* 👈 soft corners */
+  backdrop-filter: blur(8px); /* Optional: frosted-glass effect */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
 }
+
 
 .add-button {
   background-color: rgb(219, 112, 112);
@@ -126,7 +146,7 @@
 }
 
 .items-list {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
   overflow: hidden;
 }
