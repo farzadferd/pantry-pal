@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.homepage-container {
+  @apply min-h-screen bg-gradient-to-b from-blue-100 to-orange-100;
+  font-family: 'Georgia', serif;
+}
+
+.navbar {
+  @apply flex justify-between items-center px-10 py-6;
+}
+
+.logo {
+  @apply flex items-center gap-2 text-white text-xl font-bold;
+}
+
+.logo-text {
+  @apply text-white;
+}
+
+.nav-links {
+  @apply flex gap-8 text-white text-base font-medium;
+}
+
+.nav-links a {
+  @apply hover:underline;
+}
+
+.user-icon {
+  @apply inline-block mr-1 text-lg;
+}
+
+.main-content {
+  @apply flex justify-between items-center px-10 pt-20;
+}
+
+.text-section {
+  @apply w-1/2 text-white;
+}
+
+.main-heading {
+  @apply text-4xl md:text-5xl font-semibold leading-snug;
+}
+
+.dash {
+  @apply inline-block mx-1;
+}
+
+.image-section {
+  @apply w-1/2 flex justify-end;
+}
+
+.shelf-image {
+  @apply rounded-[40px] w-96 shadow-lg;
+}
