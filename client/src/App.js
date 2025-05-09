@@ -6,7 +6,6 @@ import './App.css';
 import AddPantryItem from './components/AddPantryItem';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import List from './pages/List';
 import Account from './pages/Account';
 import HomePage from './pages/HomePage';
 import ShoppingList from './pages/AddShoppingListItem';
