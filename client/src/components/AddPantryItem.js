@@ -11,7 +11,7 @@ const AddPantryItem = () => {
   });
   const [showForm, setShowForm] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { 
     fetchItems();
   }, []);
 
