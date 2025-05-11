@@ -1,56 +1,91 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-.homepage-container {
-  @apply min-h-screen bg-gradient-to-b from-blue-100 to-orange-100;
-  font-family: 'Georgia', serif;
-}
-
-.navbar {
-  @apply flex justify-between items-center px-10 py-6;
-}
-
-.logo {
-  @apply flex items-center gap-2 text-white text-xl font-bold;
-}
-
-.logo-text {
-  @apply text-white;
-}
-
-.nav-links {
-  @apply flex gap-8 text-white text-base font-medium;
-}
-
-.nav-links a {
-  @apply hover:underline;
-}
-
-.user-icon {
-  @apply inline-block mr-1 text-lg;
-}
-
-.main-content {
-  @apply flex justify-between items-center px-10 pt-20;
-}
-
-.text-section {
-  @apply w-1/2 text-white;
-}
-
-.main-heading {
-  @apply text-4xl md:text-5xl font-semibold leading-snug;
-}
-
-.dash {
-  @apply inline-block mx-1;
-}
-
-.image-section {
-  @apply w-1/2 flex justify-end;
-}
-
-.shelf-image {
-  @apply rounded-[40px] w-96 shadow-lg;
-}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+  }
+  
+  .homepage-container {
+    height: 100vh;
+    background: linear-gradient(to bottom, #c5ccd5, #f2af91); /* sunset-like gradient */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: transparent;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .logo-text {
+    margin-left: 0.5rem;
+    border-bottom: 3px solid #448aff; /* blue underline */
+    color: #f0f0f0;
+  }
+  
+  /* Navigation Links */
+  .nav-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #eeeeee;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+  }
+  
+  /* Text Section */
+  .text-section {
+    flex: 1;
+    color: white;
+  }
+  
+  .main-heading {
+    font-size: 2.5rem;
+    line-height: 1.6;
+    white-space: pre-line;
+  }
+  
+  .dash {
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* Image Section */
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .shelf-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
