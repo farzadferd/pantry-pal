@@ -28,7 +28,7 @@ const HomePage = () => {
         </div>
         <div className="image-section">
           <img
-            src="/path-to-your-image.jpg"
+            src="food.jpeg"
             alt="Pantry shelves"
             className="shelf-image"
           />
