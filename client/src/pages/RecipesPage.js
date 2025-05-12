@@ -25,20 +25,37 @@ const RecipesPage = () => {
     };
   
     //Using dummy data for now
-    const handleSearchRecipes = () => {
+    const handleSearchRecipes = async () => {
       if (ingredientsList.length === 0) return; 
   
       setLoading(true);
       setError('');
   
-      setTimeout(() => {
-        setRecipes([
-          { id: 1, title: 'Recipe 1', description: `Delicious dish with ${ingredientsList.join(', ')}` },
-          { id: 2, title: 'Recipe 2', description: `Yummy food made from ${ingredientsList.join(', ')}` },
-          { id: 3, title: 'Recipe 3', description: `Tasty treat using ${ingredientsList.join(', ')}` },
-        ]);
+      try {
+        const response = await fetch(
+          `http://localhost:3001/recipes?ingredients=${ingredientsList.join(',')}`
+        );
+    
+        if (!response.ok) {
+          throw new Error('Failed to fetch recipes');
+        }
+    
+        const data = await response.json();
+        setRecipes(data); // assuming data is an array of recipe objects
         setLoading(false);
-      }, 1000); 
+      } catch (error) {
+        console.error('Error fetching recipes:', error);
+        setError('Failed to fetch recipes. Please try again.');
+      }
+
+      // setTimeout(() => {
+      //   setRecipes([
+      //     { id: 1, title: 'Recipe 1', description: `Delicious dish with ${ingredientsList.join(', ')}` },
+      //     { id: 2, title: 'Recipe 2', description: `Yummy food made from ${ingredientsList.join(', ')}` },
+      //     { id: 3, title: 'Recipe 3', description: `Tasty treat using ${ingredientsList.join(', ')}` },
+      //   ]);
+      //   setLoading(false);
+      // }, 1000); 
     };
   
     return (

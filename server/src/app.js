@@ -76,12 +76,10 @@ app.delete('/pantry/:id', async (req, res) => {
 });
 
 app.get('/recipes', async (req, res) => {
-    const ingredients = ['chicken', 'rice', 'onion']; // hardcoded for now
-    let ingredientStr = ingredients.join(','); //format to put in the URL
-    // const ingredientStr = req.query.ingredients; // get ingredients from query params (`http://localhost:3000/recipes?ingredients=${ingredients}`)
+    const ingredientStr = req.query.ingredients; // get ingredients from query params (`http://localhost:3000/recipes?ingredients=${ingredients}`)
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientStr}&number=2`, 
+        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientStr}&number=10&ignorePantry=true`, 
         {
           headers: {
             'x-api-key': API_KEY
@@ -89,7 +87,20 @@ app.get('/recipes', async (req, res) => {
         }
       );
       const data = await response.json();
-      res.json(data);
+      let recipes = [];
+      data.forEach((recipe) => {
+        recipes.push({
+          id: recipe.id,
+          title: recipe.title,
+          usedRatio: recipe.usedIngredientCount / (recipe.usedIngredientCount + recipe.missedIngredientCount),
+          usedIngredientCount: recipe.usedIngredientCount
+        });
+      });
+
+      recipes.sort((a, b) => b.usedRatio - a.usedRatio); // sort descending
+      recipes = recipes.slice(0, 5); // keep top 5
+
+      res.json(recipes);
     } catch (error) {
       console.error('Error fetching data:', error);
       res.status(500).json({ error: 'Something went wrong' });
