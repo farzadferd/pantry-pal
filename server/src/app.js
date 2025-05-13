@@ -17,9 +17,26 @@ mongoose.connect(MONGO_URI)
 const app = express();
 const port = 3001;
 
+const jwt = require('jsonwebtoken');
+
+const verifyUser = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    res.status(403).json({ message: 'Invalid token' });
+  }
+};
+
+
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+
 app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {

@@ -8,7 +8,7 @@ const Logout = () => {
     const handleLogout = async () => {
         try {
           await axios.post('http://localhost:3001/api/auth/logout', {}, {
-          //   withCredentials: true, // if using cookies
+            withCredentials: true, // for cookies
           });
           navigate('/login');
         } catch (err) {
