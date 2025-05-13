@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+// Logout component handles logging out the user
 const Logout = () => {
     const navigate = useNavigate();
 
+    // Function to handle logout when button is clicked
     const handleLogout = async () => {
         try {
           await axios.post('http://localhost:3001/api/auth/logout', {}, {

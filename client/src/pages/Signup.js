@@ -3,12 +3,14 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
+// Singup component handles user signup functionality and UI
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    // Function to handle form submission when user clicks signup button
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');

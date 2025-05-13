@@ -12,6 +12,7 @@ import ShoppingList from './pages/AddShoppingListItem';
 import Recipes from './pages/RecipesPage';
 import Logout from './components/Logout';
 
+// Root component for the PantryPal application
 function App() {
   return (
     <Router>

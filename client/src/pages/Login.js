@@ -4,13 +4,14 @@ import './Login.css';
 import axios from 'axios';
 
 
-
+// Login component handles user login functionality and UI
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    // Function to handle form submission when user clicks login button
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');

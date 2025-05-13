@@ -4,6 +4,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
+// User Signup Route
 router.post('/signup', async (req, res) => {
     const { email, password } = req.body;
   
@@ -27,6 +28,7 @@ router.post('/signup', async (req, res) => {
     }
   });
 
+  // User Login Route
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -52,6 +54,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// User Logout Route
 router.post('/logout', (req, res) => {
     res.clearCookie('token'); // remove cookie
     res.status(200).json({ message: 'Logged out successfully' });

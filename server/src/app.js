@@ -10,6 +10,7 @@ dotenv.config();
 const API_KEY = process.env.API_KEY
 const MONGO_URI = process.env.MONGO_URI
 
+// Connect to MongoDB
 mongoose.connect(MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
@@ -39,12 +40,14 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
+// Mount authentication routes
 app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+// Get All Pantry Items
 app.get('/pantry', async (req, res) => {
   try {
     const pantryItems = await PantryItem.find();
@@ -55,6 +58,7 @@ app.get('/pantry', async (req, res) => {
   }
 });
 
+// Add New Pantry Item
 app.post('/pantry', async (req, res) => {
   const { item, quantity, category, expiration } = req.body;
   const pantryItem = new PantryItem({ item, quantity, category, expiration });
@@ -67,6 +71,7 @@ app.post('/pantry', async (req, res) => {
   }
 }); 
 
+// Update Pantry Item by ID
 app.put('/pantry/:id', async (req, res) => {
   const { id } = req.params;
   const { item, quantity, Category, expiration } = req.body;
@@ -82,6 +87,7 @@ app.put('/pantry/:id', async (req, res) => {
   }
 });
 
+// Delete Pantry Item by ID
 app.delete('/pantry/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -96,6 +102,7 @@ app.delete('/pantry/:id', async (req, res) => {
   }
 });
 
+// Get Recipes from Spoonacular API
 app.get('/recipes', async (req, res) => {
     const ingredientStr = req.query.ingredients; // get ingredients from query params (`http://localhost:3000/recipes?ingredients=${ingredients}`)
     try {
@@ -128,6 +135,7 @@ app.get('/recipes', async (req, res) => {
     }
   });
   
+// Start the Express Server
 app.listen( port, () => {
     console.log( `server started at http://localhost:${ port }` );
 }); 
