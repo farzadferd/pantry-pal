@@ -6,8 +6,7 @@ body, html {
   }
   
   .homepage-container {
-    height: 100vh;
-    background: linear-gradient(to bottom, #c5ccd5, #f2af91); /* sunset-like gradient */
+    height: 80vh;
     display: flex;
     flex-direction: column;
   }
