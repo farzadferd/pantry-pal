@@ -5,18 +5,7 @@ import "./HomePage.css";
 const HomePage = () => {
   return (
     <div className="homepage-container">
-      <nav className="navbar">
-        <div className="logo">
-          <span role="img" aria-label="frying pan">🍳</span>
-          <span className="logo-text">PantryPal</span>
-        </div>
-        <div className="nav-links">
-          <a href="#">My Pantry</a>
-          <a href="#">Recipes</a>
-          <a href="#">Shopping Lists</a>
-          {/* <a href="#"><FaUserCircle className="user-icon" /> Account</a> */}
-        </div>
-      </nav>
+
 
       <div className="main-content">
         <div className="text-section">
