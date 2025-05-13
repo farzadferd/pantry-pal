@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import PantryItem from './models/PantryItem.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 const API_KEY = process.env.API_KEY
@@ -19,6 +20,7 @@ const port = 3001;
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
