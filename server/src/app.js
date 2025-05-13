@@ -19,6 +19,8 @@ const port = 3001;
 
 const jwt = require('jsonwebtoken');
 
+// use this middleware to verify JWT token
+// this middleware will be used in the routes that require authentication
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) return res.status(401).json({ message: 'Unauthorized' });
