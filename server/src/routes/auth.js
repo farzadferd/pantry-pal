@@ -40,12 +40,12 @@ router.post('/login', async (req, res) => {
     if (!matched) return res.status(401).json({ message: 'Incorrect password' });
 
     // issue a JWT token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-    res.cookie('token', token, {
-      httpOnly: true,
-      sameSite: 'Lax',
-      maxAge: 24 * 60 * 60 * 1000 // 1 day
-    });
+    // const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    // res.cookie('token', token, {
+    //   httpOnly: true,
+    //   sameSite: 'Lax',
+    //   maxAge: 24 * 60 * 60 * 1000 // 1 day
+    // });
 
     res.json({ message: 'Login successful', user: { id: user._id, email: user.email } });
 
