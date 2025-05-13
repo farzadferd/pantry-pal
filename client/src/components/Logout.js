@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
-    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -13,8 +12,8 @@ const Logout = () => {
           });
           navigate('/login');
         } catch (err) {
-          setError('Logout failed');
-          console.error('Logout failed', err);
+          const errorMessage = err.response.data.message;
+          alert(errorMessage);
         }
       };
 

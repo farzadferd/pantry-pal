@@ -14,14 +14,15 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-
+        
         try {
             const res = await axios.post('http://localhost:3001/api/auth/login', { email, password });
             alert('Login successful!');
             navigate('/');
         } catch (err) {
-            setError('Login failed');
-            alert(err.response.data.msg);
+            const errorMessage = err.response.data.message;
+            alert(errorMessage);
+            setError('Login failed: ' + errorMessage);
         }
     };
 
