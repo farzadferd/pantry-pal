@@ -151,7 +151,7 @@
   overflow: hidden;
 }
 
-.list-header, .list-item {
+.list-header, .pantry-list-item {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
   padding: 15px;
@@ -163,11 +163,11 @@
   font-weight: bold;
 }
 
-.list-item {
+.pantry-list-item {
   border-bottom: 1px solid #eee;
 }
 
-.list-item:last-child {
+.pantry-list-item:last-child {
   border-bottom: none;
 }
 

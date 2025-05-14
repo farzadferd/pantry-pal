@@ -121,7 +121,7 @@ const AddPantryItem = () => {
           <span>Actions</span>
         </div>
         {items.map((item, index) => (
-          <div key={index} className="list-item">
+          <div key={index} className="pantry-list-item">
             <span>{item.item}</span>
             <span>{item.quantity}</span>
             <span>{item.category}</span>
