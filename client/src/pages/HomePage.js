@@ -10,14 +10,14 @@ const HomePage = () => {
       <div className="main-content">
         <div className="text-section">
           <h1 className="main-heading">
-            Your Kitchen,<br />
-            Your Inventory<br />
-            <span className="dash">–</span> Under Control.
+          <span className="line">Your Kitchen</span>
+          <span className="line">Your Inventory</span>
+          <span className="line dash">Under Control</span>
           </h1>
         </div>
         <div className="image-section">
           <img
-            src="food.jpeg"
+            src="pantry_bg.png"
             alt="Pantry shelves"
             className="shelf-image"
           />

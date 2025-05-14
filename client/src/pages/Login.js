@@ -73,7 +73,7 @@ const Login = () => {
             {/* Right Section: Image */}
             <div className="login-right">
                 <div className="image-overlay">
-                    <h1>Pantry<br />Pal</h1>
+                    {/* <h1>Pantry<br />Pal</h1> */}
                 </div>
             </div>
         </div>

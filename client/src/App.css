@@ -1,31 +1,19 @@
-
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App{
+.App {
   background: linear-gradient(to bottom, #c5ccd5, #f2af91); /* sunset-like gradient */
   min-height: 100vh;
-  
 }
-/* .App-header {
-  background-color: white; 
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-} */
 
 .App-header {
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Vertically center everything in the header */
 }
 
 .App-header h1 {
@@ -34,9 +22,19 @@
   color: #333;
 }
 
+.App-header h1 a {
+  text-decoration: none;
+  color: #666;
+}
+
+.App-header h1 a:hover {
+  color: rgb(219, 112, 112);
+}
+
 .App-header nav {
   display: flex;
   gap: 2rem;
+  align-items: center; /* Ensures vertical alignment */
 }
 
 .App-header nav a {
@@ -63,7 +61,6 @@
 }
 
 .pantry-container {
-  
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -81,7 +78,6 @@
   -webkit-backdrop-filter: blur(8px); /* Safari support */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
 }
-
 
 .add-button {
   background-color: rgb(219, 112, 112);
@@ -178,3 +174,23 @@
   font-size: 16px;
 }
 
+/* Style for the Logout button in the nav bar */
+.App-header nav button {
+  all: unset; /* Reset all default button styles */
+  display: inline-flex; /* Make it behave like a link */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Center the content horizontally */
+  cursor: pointer; /* Ensure it looks clickable */
+  color: #fff; /* Match the link color */
+  font-weight: 500; /* Match font weight with other links */
+  font-size: 16px; /* Match font size */
+  text-decoration: none; /* Remove text decoration */
+  padding: 8px 16px; /* Remove padding */
+  background-color: rgb(219, 112, 112);
+  border-radius: 5px;
+}
+
+.App-header nav button:hover {
+  color: #555; 
+  background-color: rgb(229, 54, 54);
+}

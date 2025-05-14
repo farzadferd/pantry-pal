@@ -3,10 +3,10 @@
     max-width: 600px;
     margin: 40px auto;
     padding: 20px 30px;
-    background: #fffef8;
+    background: #d2e5ee;
     border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    font-family: Consolas, 'Courier New', monospace;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* font-family: Consolas, 'Courier New', monospace; */
     border-radius: 8px;
   }
   
@@ -19,23 +19,34 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    align-items: stretch; 
+    height: 50px;
   }
   
   .input-area input {
     flex: 1;
-    padding: 8px;
+    padding: 10px 12px;
+    /* height: 50px;  */
     border: 1px solid #ccc;
     font-family: inherit;
     font-size: 16px;
+    box-sizing: border-box; 
   }
   
   .input-area button {
-    padding: 8px 16px;
-    background-color: #007bff;
+    /* height: 44px;  */
+    padding: 0 16px; 
+    background-color: rgb(219, 112, 112);
     color: white;
     border: none;
     font-weight: bold;
     cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    vertical-align: top;
+    /* margin-bottom: 20px; */
   }
   
   .shopping-list {
@@ -65,7 +76,7 @@
   .clear-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background: #dc3545;
+    background: #dd4151;
     color: white;
     border: none;
     font-weight: bold;
@@ -73,5 +84,7 @@
     display: block;
     width: 100%;
     border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
   }
   

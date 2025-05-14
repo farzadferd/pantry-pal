@@ -2,10 +2,10 @@
     max-width: 700px;
     margin: 40px auto;
     padding: 20px;
-    background: #f4f4f4;
+    background: #d2e5ee;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: inherit;
   }
   
   h2 {
@@ -26,10 +26,11 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
+    font-family: inherit;
   }
   
   .input-section input:focus {
-    border-color: #ff4d4d;
+    border-color: #2e8ab8;
   }
   
   .ingredient-bubbles {
@@ -40,7 +41,7 @@
   }
   
   .ingredient-bubble {
-    background-color: #ff4d4d;
+    background-color: #2e8ab8;
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
@@ -49,6 +50,7 @@
     font-size: 14px;
     height: 30px; 
     line-height: 30px; 
+    font-family: inherit;
   }
   
   .remove-bubble {
@@ -69,13 +71,14 @@
   
   button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: rgb(219, 112, 112);
     color: white;
     border: none;
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
+    font-family: inherit;
   }
   
   button:disabled {
